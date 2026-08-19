@@ -1,13 +1,9 @@
-
-
-import { useState } from 'react';
 import type { Metadata } from 'next'
 import { Inter, Syne } from 'next/font/google'
 import './globals.css'
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import CartDrawer from '@/components/CartDrawer';
-import SearchModal from '@/components/SearchModal';
+import HeaderWithSearch from '@/components/HeaderWithSearch'
+import Footer from '@/components/Footer'
+import CartDrawer from '@/components/CartDrawer'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -29,16 +25,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-
   return (
     <html lang="en" className={`${inter.variable} ${syne.variable}`}>
       <body>
-        <Header onSearchOpen={() => setIsSearchOpen(true)} />
+        <HeaderWithSearch />
         {children}
         <Footer />
         <CartDrawer />
-        <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
       </body>
     </html>
   );
