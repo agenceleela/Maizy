@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { ShoppingBag, Search, Menu, X, User } from 'lucide-react';
 import { useCartStore } from '@/lib/cart';
 import { cn } from '@/lib/utils';
+import logo from '../image1.png';
 
 interface HeaderProps {
   onSearchOpen?: () => void;
@@ -45,7 +46,7 @@ export default function Header({ onSearchOpen }: HeaderProps) {
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
               <Image
-                src="/image1.png"
+                src={logo}
                 alt="MAIZY"
                 width={120}
                 height={40}
