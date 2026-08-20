@@ -22,10 +22,10 @@ export default function Hero() {
             MAIZY
           </h1>
           <p className="text-lg md:text-2xl lg:text-3xl font-light tracking-wider">
-            NÉ DANS LES TROPIQUES.
+            FROM GUIANA,
           </p>
           <p className="text-lg md:text-2xl lg:text-3xl font-light tracking-wider">
-            PORTÉ PARTOUT.
+            TO THE WORLD.
           </p>
           <Link
             href="/shop"
