@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="pt-20">
+    <main className="pt-28">
       <section className="py-24 px-4 bg-maizy-charcoal text-white text-center">
         <p className="text-maizy-yellow text-xs tracking-[0.3em] mb-6">973 — FRENCH GUIANA</p>
         <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tighter mb-8">
