@@ -41,7 +41,7 @@ export default function Header({ onSearchOpen }: HeaderProps) {
           isScrolled ? 'shadow-md' : 'shadow-none'
         )}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-5 md:px-8">
           <div className="grid grid-cols-3 items-center h-20">
             {/* Gauche : navigation (desktop) / burger (mobile) */}
             <div className="flex items-center justify-start">
@@ -53,12 +53,12 @@ export default function Header({ onSearchOpen }: HeaderProps) {
                 <Menu className="w-5 h-5 text-maizy-charcoal" />
               </button>
 
-              <nav className="hidden md:flex items-center space-x-8">
+              <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
                 {navLinks.map((link) => (
                   <Link
                     key={link.label}
                     href={link.href}
-                    className="text-sm font-medium tracking-wider text-maizy-charcoal hover:text-maizy-green transition-colors"
+                    className="text-xs font-medium tracking-wide text-maizy-charcoal hover:text-maizy-green transition-colors whitespace-nowrap"
                   >
                     {link.label}
                   </Link>
@@ -72,16 +72,16 @@ export default function Header({ onSearchOpen }: HeaderProps) {
                 <Image
                   src={logo}
                   alt="MAIZY"
-                  width={120}
-                  height={48}
+                  width={140}
+                  height={56}
                   priority
-                  className="h-10 w-auto object-contain"
+                  className="h-12 w-auto object-contain"
                 />
               </Link>
             </div>
 
             {/* Droite : icônes */}
-            <div className="flex items-center justify-end space-x-4">
+            <div className="flex items-center justify-end space-x-2 md:space-x-3">
               <button
                 onClick={onSearchOpen}
                 className="p-2 hover:bg-maizy-green/10 rounded-full transition-colors"
