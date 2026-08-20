@@ -21,8 +21,7 @@ export default function EditorialSection({
   return (
     <section className="py-16 md:py-24 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className={`grid md:grid-cols-2 gap-8 md:gap-16 items-center ${reverse ? 'md:flex-row-reverse' : ''}`}>
-          {/* Image */}
+        <div className={`grid md:grid-cols-2 gap-8 md:gap-16 items-center ${reverse ? 'md:[&>*:first-child]:order-2' : ''}`}>
           <div className="relative aspect-[4/5] overflow-hidden image-zoom-container">
             <Image
               src={image}
@@ -32,7 +31,6 @@ export default function EditorialSection({
             />
           </div>
 
-          {/* Content */}
           <div className="space-y-6">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
               {title}
