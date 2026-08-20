@@ -21,7 +21,7 @@ export default function ShopPage() {
     : products.filter(p => p.category === selectedCategory);
 
   return (
-    <main className="pt-20">
+    <main className="pt-28">
       {/* Header */}
       <section className="py-16 px-4 bg-maizy-charcoal text-white text-center">
         <p className="text-maizy-yellow text-xs tracking-[0.3em] mb-4">973 — GUYANE FRANÇAISE</p>
