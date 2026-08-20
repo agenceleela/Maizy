@@ -1,4 +1,5 @@
 'use client';
+
 export default function Newsletter() {
   return (
     <section className="py-20 px-4 bg-maizy-charcoal text-white">
