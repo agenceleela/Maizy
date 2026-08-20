@@ -16,7 +16,6 @@ export default function CartDrawer() {
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -25,7 +24,6 @@ export default function CartDrawer() {
             className="fixed inset-0 bg-black/50 z-50"
           />
 
-          {/* Drawer */}
           <motion.div
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
@@ -34,9 +32,8 @@ export default function CartDrawer() {
             className="fixed right-0 top-0 bottom-0 w-full max-w-md bg-maizy-cream z-50 shadow-xl"
           >
             <div className="flex flex-col h-full">
-              {/* Header */}
               <div className="flex items-center justify-between p-6 border-b">
-                <h2 className="font-display text-xl font-bold">CART</h2>
+                <h2 className="font-display text-xl font-bold">PANIER</h2>
                 <button
                   onClick={closeCart}
                   className="p-2 hover:bg-maizy-green/10 rounded-full transition-colors"
@@ -45,17 +42,16 @@ export default function CartDrawer() {
                 </button>
               </div>
 
-              {/* Items */}
               <div className="flex-1 overflow-y-auto p-6">
                 {items.length === 0 ? (
                   <div className="text-center py-12">
-                    <p className="text-gray-500 mb-4">Your cart is empty</p>
+                    <p className="text-gray-500 mb-4">Votre panier est vide</p>
                     <Link
                       href="/shop"
                       onClick={closeCart}
                       className="inline-block px-6 py-3 bg-maizy-charcoal text-white font-medium hover:bg-maizy-green transition-colors"
                     >
-                      CONTINUE SHOPPING
+                      CONTINUER MES ACHATS
                     </Link>
                   </div>
                 ) : (
@@ -130,15 +126,14 @@ export default function CartDrawer() {
                 )}
               </div>
 
-              {/* Footer */}
               {items.length > 0 && (
                 <div className="border-t p-6 space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="font-medium">Subtotal</span>
+                    <span className="font-medium">SOUS-TOTAL</span>
                     <span className="font-display text-xl font-bold">€{total.toFixed(2)}</span>
                   </div>
                   <p className="text-xs text-gray-500">
-                    Shipping and taxes calculated at checkout.
+                    Frais de port et taxes calculés au paiement.
                   </p>
                   <button
                     className={cn(
@@ -146,13 +141,13 @@ export default function CartDrawer() {
                       'bg-maizy-charcoal text-white hover:bg-maizy-green'
                     )}
                   >
-                    CHECKOUT
+                    PASSER LA COMMANDE
                   </button>
                   <button
                     onClick={closeCart}
                     className="w-full py-3 text-sm text-gray-500 hover:text-maizy-charcoal"
                   >
-                    CONTINUE SHOPPING
+                    CONTINUER MES ACHATS
                   </button>
                 </div>
               )}
