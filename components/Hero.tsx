@@ -1,12 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import headerImage from '../imageheader.png';
 
 export default function Hero() {
   return (
     <section className="relative h-screen min-h-[600px] overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=1920&q=80"
+          src={headerImage}
           alt="MAIZY"
           fill
           priority
