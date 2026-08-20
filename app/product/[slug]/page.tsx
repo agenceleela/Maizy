@@ -22,7 +22,7 @@ export default function ProductPage() {
 
   if (!product) {
     return (
-      <main className="pt-20 min-h-screen flex items-center justify-center">
+      <main className="pt-28 min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="font-display text-4xl font-bold mb-4">PRODUCT NOT FOUND</h1>
           <Link href="/shop" className="text-maizy-green hover:underline">
