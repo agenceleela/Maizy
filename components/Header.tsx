@@ -27,10 +27,10 @@ export default function Header({ onSearchOpen }: HeaderProps) {
   }, []);
 
   const navLinks = [
-    { href: '/shop', label: 'NEW ARRIVALS' },
-    { href: '/shop', label: 'SHOP' },
+    { href: '/shop', label: 'NOUVEAUTÉS' },
+    { href: '/shop', label: 'BOUTIQUE' },
     { href: '/collections', label: 'COLLECTIONS' },
-    { href: '/about', label: 'ABOUT' },
+    { href: '/about', label: 'À PROPOS' },
   ];
 
   return (
@@ -43,23 +43,21 @@ export default function Header({ onSearchOpen }: HeaderProps) {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
             <Link href="/" className="flex-shrink-0">
               <Image
                 src={logo}
                 alt="MAIZY"
                 width={120}
-                height={40}
+                height={48}
                 priority
-                className="object-contain"
+                className="h-10 w-auto object-contain"
               />
             </Link>
 
-            {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => (
                 <Link
-                  key={link.href}
+                  key={link.label}
                   href={link.href}
                   className="text-sm font-medium tracking-wider text-maizy-charcoal hover:text-maizy-green transition-colors"
                 >
@@ -68,26 +66,24 @@ export default function Header({ onSearchOpen }: HeaderProps) {
               ))}
             </nav>
 
-            {/* Icons */}
             <div className="flex items-center space-x-4">
               <button
                 onClick={onSearchOpen}
                 className="p-2 hover:bg-maizy-green/10 rounded-full transition-colors"
-                aria-label="Search"
+                aria-label="Rechercher"
               >
                 <Search className="w-5 h-5 text-maizy-charcoal" />
               </button>
               
               <button
                 className="hidden md:block p-2 hover:bg-maizy-green/10 rounded-full transition-colors"
-                aria-label="Account"
+                aria-label="Compte"
               >
                 <User className="w-5 h-5 text-maizy-charcoal" />
               </button>
 
               <CartButton totalItems={getTotalItems()} />
 
-              {/* Mobile menu button */}
               <button
                 onClick={() => setIsMobileMenuOpen(true)}
                 className="md:hidden p-2 hover:bg-maizy-green/10 rounded-full transition-colors"
@@ -100,7 +96,6 @@ export default function Header({ onSearchOpen }: HeaderProps) {
         </div>
       </header>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-50 md:hidden">
           <div
@@ -120,7 +115,7 @@ export default function Header({ onSearchOpen }: HeaderProps) {
             <nav className="p-4 space-y-4">
               {navLinks.map((link) => (
                 <Link
-                  key={link.href}
+                  key={link.label}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block text-lg font-medium tracking-wider py-2 border-b border-gray-200"
@@ -143,7 +138,7 @@ function CartButton({ totalItems }: { totalItems: number }) {
     <button
       onClick={toggleCart}
       className="relative p-2 hover:bg-maizy-green/10 rounded-full transition-colors"
-      aria-label="Cart"
+      aria-label="Panier"
     >
       <ShoppingBag className="w-5 h-5 text-maizy-charcoal" />
       {totalItems > 0 && (
