@@ -4,6 +4,7 @@ import './globals.css'
 import HeaderWithSearch from '@/components/HeaderWithSearch'
 import Footer from '@/components/Footer'
 import CartDrawer from '@/components/CartDrawer'
+import AnnouncementBar from '@/components/AnnouncementBar'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -16,8 +17,8 @@ const syne = Syne({
 })
 
 export const metadata: Metadata = {
-  title: 'MAIZY | Streetwear Born in the Tropics',
-  description: 'Contemporary streetwear inspired by French Guiana, tropical environments, and modern urban fashion.',
+  title: 'MAIZY | Streetwear né dans les tropiques',
+  description: 'Streetwear contemporain inspiré de la Guyane française, des environnements tropicaux et de la culture urbaine moderne.',
 }
 
 export default function RootLayout({
@@ -26,8 +27,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${syne.variable}`}>
+    <html lang="fr" className={`${inter.variable} ${syne.variable}`}>
       <body>
+        <AnnouncementBar />
         <HeaderWithSearch />
         {children}
         <Footer />
