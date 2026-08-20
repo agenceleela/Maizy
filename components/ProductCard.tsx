@@ -28,7 +28,6 @@ export default function ProductCard({ product }: ProductCardProps) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Image Container */}
       <Link href={`/product/${product.slug}`} className="block relative aspect-[3/4] overflow-hidden bg-gray-100">
         <Image
           src={isHovered && product.images[1] ? product.images[1] : product.images[0]}
@@ -40,21 +39,19 @@ export default function ProductCard({ product }: ProductCardProps) {
           )}
           priority={false}
         />
-        
-        {/* Badges */}
+
         {product.newArrival && (
           <span className="absolute top-3 left-3 px-2 py-1 bg-maizy-green text-white text-xs font-bold tracking-wider">
-            NEW
-          </span>
-        )}
-        
-        {hasSale && (
-          <span className="absolute top-3 left-3 px-2 py-1 bg-maizy-red text-white text-xs font-bold tracking-wider">
-            SALE
+            NOUVEAU
           </span>
         )}
 
-        {/* Quick Add Button */}
+        {hasSale && (
+          <span className="absolute top-3 left-3 px-2 py-1 bg-maizy-red text-white text-xs font-bold tracking-wider">
+            SOLDE
+          </span>
+        )}
+
         <button
           onClick={(e) => {
             e.preventDefault();
@@ -66,11 +63,10 @@ export default function ProductCard({ product }: ProductCardProps) {
             isHovered ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
           )}
         >
-          QUICK ADD
+          AJOUT RAPIDE
         </button>
       </Link>
 
-      {/* Product Info */}
       <div className="mt-3 space-y-1">
         <Link href={`/product/${product.slug}`}>
           <h3 className="font-medium text-sm text-maizy-charcoal hover:text-maizy-green transition-colors">
