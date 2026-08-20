@@ -19,7 +19,7 @@ export default function Header({ onSearchOpen }: HeaderProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -37,39 +37,51 @@ export default function Header({ onSearchOpen }: HeaderProps) {
     <>
       <header
         className={cn(
-          'fixed top-8 left-0 right-0 z-50 transition-all duration-300',
-          isScrolled ? 'bg-maizy-cream/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
+          'fixed top-8 left-0 right-0 z-50 bg-maizy-cream transition-shadow duration-300',
+          isScrolled ? 'shadow-md' : 'shadow-none'
         )}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <Link href="/" className="flex-shrink-0">
-              <Image
-                src={logo}
-                alt="MAIZY"
-                width={120}
-                height={48}
-                priority
-                className="h-10 w-auto object-contain"
-              />
-            </Link>
+          <div className="grid grid-cols-3 items-center h-20">
+            {/* Gauche : navigation (desktop) / burger (mobile) */}
+            <div className="flex items-center justify-start">
+              <button
+                onClick={() => setIsMobileMenuOpen(true)}
+                className="md:hidden p-2 hover:bg-maizy-green/10 rounded-full transition-colors"
+                aria-label="Menu"
+              >
+                <Menu className="w-5 h-5 text-maizy-charcoal" />
+              </button>
 
-            {/* Navigation desktop */}
-            <nav className="hidden md:flex items-center space-x-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className="text-sm font-medium tracking-wider text-maizy-charcoal hover:text-maizy-green transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
+              <nav className="hidden md:flex items-center space-x-8">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    className="text-sm font-medium tracking-wider text-maizy-charcoal hover:text-maizy-green transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
 
-            {/* Icônes */}
-            <div className="flex items-center space-x-4">
+            {/* Centre : logo */}
+            <div className="flex items-center justify-center">
+              <Link href="/" className="flex-shrink-0">
+                <Image
+                  src={logo}
+                  alt="MAIZY"
+                  width={120}
+                  height={48}
+                  priority
+                  className="h-10 w-auto object-contain"
+                />
+              </Link>
+            </div>
+
+            {/* Droite : icônes */}
+            <div className="flex items-center justify-end space-x-4">
               <button
                 onClick={onSearchOpen}
                 className="p-2 hover:bg-maizy-green/10 rounded-full transition-colors"
@@ -86,14 +98,6 @@ export default function Header({ onSearchOpen }: HeaderProps) {
               </button>
 
               <CartButton totalItems={getTotalItems()} />
-
-              <button
-                onClick={() => setIsMobileMenuOpen(true)}
-                className="md:hidden p-2 hover:bg-maizy-green/10 rounded-full transition-colors"
-                aria-label="Menu"
-              >
-                <Menu className="w-5 h-5 text-maizy-charcoal" />
-              </button>
             </div>
           </div>
         </div>
@@ -106,7 +110,7 @@ export default function Header({ onSearchOpen }: HeaderProps) {
             className="fixed inset-0 bg-black/50"
             onClick={() => setIsMobileMenuOpen(false)}
           />
-          <div className="fixed right-0 top-0 bottom-0 w-full max-w-xs bg-maizy-cream animate-slide-up">
+          <div className="fixed left-0 top-0 bottom-0 w-full max-w-xs bg-maizy-cream animate-slide-up">
             <div className="flex items-center justify-between p-4 border-b">
               <span className="font-display text-lg font-bold">MENU</span>
               <button
