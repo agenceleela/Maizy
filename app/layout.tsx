@@ -18,7 +18,7 @@ const syne = Syne({
 
 export const metadata: Metadata = {
   title: 'MAIZY | Streetwear né dans les tropiques',
-  description: 'Streetwear contemporain inspiré de la Guyane française, des environnements tropicaux et de la culture urbaine moderne.',
+  description: 'Streetwear contemporain inspiré de la Guyane française, des environnements tropicaux et de la mode urbaine moderne.',
 }
 
 export default function RootLayout({
