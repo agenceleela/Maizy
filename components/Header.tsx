@@ -37,12 +37,13 @@ export default function Header({ onSearchOpen }: HeaderProps) {
     <>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+          'fixed top-8 left-0 right-0 z-50 transition-all duration-300',
           isScrolled ? 'bg-maizy-cream/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
         )}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
+            {/* Logo */}
             <Link href="/" className="flex-shrink-0">
               <Image
                 src={logo}
@@ -54,6 +55,7 @@ export default function Header({ onSearchOpen }: HeaderProps) {
               />
             </Link>
 
+            {/* Navigation desktop */}
             <nav className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => (
                 <Link
@@ -66,6 +68,7 @@ export default function Header({ onSearchOpen }: HeaderProps) {
               ))}
             </nav>
 
+            {/* Icônes */}
             <div className="flex items-center space-x-4">
               <button
                 onClick={onSearchOpen}
@@ -74,7 +77,7 @@ export default function Header({ onSearchOpen }: HeaderProps) {
               >
                 <Search className="w-5 h-5 text-maizy-charcoal" />
               </button>
-              
+
               <button
                 className="hidden md:block p-2 hover:bg-maizy-green/10 rounded-full transition-colors"
                 aria-label="Compte"
@@ -96,6 +99,7 @@ export default function Header({ onSearchOpen }: HeaderProps) {
         </div>
       </header>
 
+      {/* Menu mobile */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-50 md:hidden">
           <div
