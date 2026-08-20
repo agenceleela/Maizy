@@ -29,7 +29,7 @@ export default function CollectionsPage() {
   const filteredProducts = selectedCollection ? getCollectionProducts(selectedCollection) : [];
 
   return (
-    <main className="pt-20">
+    <main className="pt-28">
       <section className="py-16 px-4 bg-maizy-charcoal text-white text-center">
         <p className="text-maizy-yellow text-xs tracking-[0.3em] mb-4">973 — FRENCH GUIANA</p>
         <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tighter mb-4">COLLECTIONS</h1>
