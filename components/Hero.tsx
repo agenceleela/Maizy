@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Image
           src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=1920&q=80"
-          alt="MAIZY Hero"
+          alt="MAIZY"
           fill
           priority
           className="object-cover"
