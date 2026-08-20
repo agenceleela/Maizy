@@ -4,7 +4,7 @@ import headerImage from '../imageheader.png';
 
 export default function Hero() {
   return (
-    <section className="relative h-screen min-h-[600px] overflow-hidden">
+    <section className="relative mt-28 h-[calc(100vh-7rem)] min-h-[520px] overflow-hidden">
       <div className="absolute inset-0">
         <Image
           src={headerImage}
