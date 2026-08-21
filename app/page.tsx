@@ -1,12 +1,10 @@
 import Link from 'next/link';
-import { getFeaturedProducts, getNewArrivals } from '@/data/products';
+import { getNewArrivals } from '@/data/products';
 import ProductCard from '@/components/ProductCard';
-import EditorialSection from '@/components/EditorialSection';
 import Hero from '@/components/Hero';
 import Newsletter from '@/components/Newsletter';
 
 export default function HomePage() {
-  const featuredProducts = getFeaturedProducts();
   const newArrivals = getNewArrivals();
 
   return (
@@ -22,49 +20,28 @@ export default function HomePage() {
               TOUT VOIR →
             </Link>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {newArrivals.slice(0, 4).map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
+
+          {newArrivals.length > 0 ? (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+              {newArrivals.slice(0, 4).map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          ) : (
+            <div className="bg-white border border-maizy-charcoal/10 py-20 px-6 text-center">
+              <div className="flex justify-center gap-2 mb-6">
+                <span className="w-10 h-1 bg-maizy-green" />
+                <span className="w-10 h-1 bg-maizy-yellow" />
+                <span className="w-10 h-1 bg-maizy-red" />
+              </div>
+              <h3 className="font-display text-2xl md:text-3xl font-bold mb-3">DROP 001 — ARRIVE BIENTÔT</h3>
+              <p className="text-gray-500 text-sm max-w-md mx-auto">
+                Les premiers T-shirts MAIZY débarquent très bientôt. Inscris-toi à la newsletter pour être prévenu en premier.
+              </p>
+            </div>
+          )}
         </div>
       </section>
-
-      {/* Éditorial 1 */}
-      <EditorialSection
-        image="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&q=80"
-        title="EXPLORATEUR URBAIN"
-        subtitle="Conçu pour ceux qui traversent la ville avec intention. Notre dernière collection mêle technicité et style urbain."
-        ctaText="DÉCOUVRIR LES VESTES"
-        ctaHref="/shop"
-      />
-
-      {/* Sélection */}
-      <section className="py-16 md:py-24 px-4 bg-maizy-cream">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">SÉLECTION</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Des pièces essentielles qui définissent l&apos;esthétique MAIZY. Matières premium, designs affirmés, style incomparable.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {featuredProducts.slice(0, 8).map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Éditorial 2 */}
-      <EditorialSection
-        image="https://images.unsplash.com/photo-1552374196-c4e7ffc6e194?w=1200&q=80"
-        title="973 POUR TOUJOURS"
-        subtitle="La Guyane française sur la scène internationale. Notre collection signature rend hommage au département qui nous relie à nos racines."
-        ctaText="COLLECTION 973"
-        ctaHref="/shop"
-        reverse
-      />
 
       {/* Manifeste */}
       <section className="py-24 px-4 bg-maizy-charcoal text-white">
