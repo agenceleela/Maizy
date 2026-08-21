@@ -5,55 +5,38 @@ export default function Footer() {
     <footer className="bg-maizy-black text-white pt-16 pb-8 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-          {/* Shop */}
           <div>
-            <h3 className="font-display text-lg font-bold mb-4">SHOP</h3>
+            <h3 className="font-display text-lg font-bold mb-4">BOUTIQUE</h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
                 <Link href="/shop" className="hover:text-maizy-green transition-colors">
-                  New Arrivals
+                  Nouveautés
                 </Link>
               </li>
               <li>
-                <Link href="/shop?category=T-Shirts" className="hover:text-maizy-green transition-colors">
+                <Link href="/shop" className="hover:text-maizy-green transition-colors">
                   T-Shirts
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop?category=Hoodies" className="hover:text-maizy-green transition-colors">
-                  Hoodies
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop?category=Pants" className="hover:text-maizy-green transition-colors">
-                  Pants
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop?category=Accessories" className="hover:text-maizy-green transition-colors">
-                  Accessories
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Information */}
           <div>
-            <h3 className="font-display text-lg font-bold mb-4">INFORMATION</h3>
+            <h3 className="font-display text-lg font-bold mb-4">INFORMATIONS</h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
                 <Link href="/about" className="hover:text-maizy-green transition-colors">
-                  About MAIZY
+                  À propos de MAIZY
                 </Link>
               </li>
               <li>
                 <Link href="/shipping" className="hover:text-maizy-green transition-colors">
-                  Shipping
+                  Livraison
                 </Link>
               </li>
               <li>
                 <Link href="/returns" className="hover:text-maizy-green transition-colors">
-                  Returns
+                  Retours
                 </Link>
               </li>
               <li>
@@ -69,9 +52,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Social */}
           <div>
-            <h3 className="font-display text-lg font-bold mb-4">SOCIAL</h3>
+            <h3 className="font-display text-lg font-bold mb-4">RÉSEAUX SOCIAUX</h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
                 <a href="#" className="hover:text-maizy-green transition-colors">
@@ -86,26 +68,24 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Brand Statement */}
           <div>
             <h3 className="font-display text-lg font-bold mb-4">MAIZY</h3>
             <p className="text-sm text-gray-400 leading-relaxed">
-              Contemporary streetwear inspired by French Guiana, tropical environments, and modern urban culture.
+              Streetwear contemporain inspiré de la Guyane française, des environnements tropicaux et de la culture urbaine moderne.
             </p>
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-500">
-            © {new Date().getFullYear()} MAIZY. All rights reserved.
+            © {new Date().getFullYear()} MAIZY. Tous droits réservés.
           </p>
           <div className="flex items-center gap-4 text-xs text-gray-500">
             <Link href="/privacy" className="hover:text-maizy-green transition-colors">
-              Privacy Policy
+              Politique de confidentialité
             </Link>
             <Link href="/terms" className="hover:text-maizy-green transition-colors">
-              Terms of Service
+              Conditions générales
             </Link>
           </div>
         </div>
